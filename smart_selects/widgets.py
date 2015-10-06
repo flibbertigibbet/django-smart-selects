@@ -84,11 +84,13 @@ class ChainedSelect(Select):
             auto_choose = 'true'
         else:
             auto_choose = 'false'
-        iterator = iter(self.choices)
-        if hasattr(iterator, '__next__'):
-            empty_label = iterator.__next__()[1]
-        else:
-            empty_label = iterator.next()[1]  # Hacky way to getting the correct empty_label from the field instead of a hardcoded '--------'
+
+        empty_label = '--------'
+        #iterator = iter(self.choices)
+        #if hasattr(iterator, '__next__'):
+        #    empty_label = iterator.__next__()[1]
+        #else:
+        #    empty_label = iterator.next()[1]  # Hacky way to getting the correct empty_label from the field instead of a hardcoded '--------'
         js = """
         <script type="text/javascript">
         //<![CDATA[
